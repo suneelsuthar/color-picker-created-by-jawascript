@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    table{
+    margin: auto;
+    margin-top: 80px;
+    }
+td{
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border: 1px solid gray;
+    color: red;
+    text-align: center;
+}
+#brown{
+    background-color: brown;
+}
+#blueviolet{
+    background-color:blueviolet;
+}
+#blue{
+    background-color: blue;
+}
+#bisque{
+    background-color: bisque;
+}
+#burlyood{
+    background-color: burlywood;
+}
+#cadetblue{
+    background-color: cadetblue;
+}
+#coral{
+    background-color: coral;
+}
+#crimson{
+    background-color: crimson;
+}
+#darkblue{
+    background-color: darkblue;
+}
+#darkcyan{
+    background-color: darkcyan;
+}
+
+
+
+#darkred{
+    background-color: darkred
+}
+#darkorange{
+    background-color:darkorange;
+}
+#darkmagenta{
+    background-color: darkmagenta;
+}
+#darkgreen{
+    background-color: darkgreen;
+}
+#deeppink{
+    background-color: deeppink;
+}
+#darkviolet{
+    background-color: darkviolet;
+}
+#darksalmon{
+    background-color: darksalmon;
+}
+#dodgerblue{
+    background-color: dodgerblue;
+}
+#firebrick{
+    background-color: firebrick;
+}
+#floralwhite{
+    background-color: floralwhite;
+}
+#fuchsia{
+    background-color: fuchsia;
+}
+#gray{
+    background-color:gray;
+}
+#grey{
+    background-color: grey;
+}
+#green{
+    background-color: green;
+}
+#yellow{
+    background-color: yellow;
+}
+#indigo{
+    background-color: indigo;
+}
+#lightcoral{
+    background-color: lightcoral;
+}
+#white{
+    background-color: white;
+}
+#limegreen{
+    background-color: limegreen;
+}
+#maroon{
+    background-color: maroon;
+}
+
+h1{
+    text-align: center;
+}
+#div{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 5px;
+}
+#differ{
+    padding: 0px !important;
+    margin: 0px !important;
+    text-align: center;
+    color: rgb(26, 25, 25);
+    margin-left: 10px;
+    border: none;
+}
+#head{
+    border: none;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 15px;
+
+}
+</style>
+<body>
+    <table>
+        <h1>COLOR PICKER</h1>
+    <tr>
+        <td id="brown"onclick="clickme(event)"></td>
+        <td id="blueviolet" onclick="clickme(event)"></td>
+        <td id="blue"onclick="clickme(event)"></td>
+        <td id="bisque"onclick="clickme(event)"></td>
+        <td id="burlyood"onclick="clickme(event)"></td>
+        <td id="cadetblue"onclick="clickme(event)"></td>
+        <td id="coral"onclick="clickme(event)"></td>
+        <td id="crimson"onclick="clickme(event)"></td>
+        <td id="darkblue"onclick="clickme(event)"></td>
+        <td id="darkcyan" onclick="clickme(event)"></td>
+        <td rowspan="3" id="differ">    
+        <input type="color" id="head" value="#f6b73c" onclick="clickhere(event)">
+        edit colors
+        </td>
+    </tr>
+    <tr>
+        <td id="darkred" onclick="clickme(event)"></td>
+        <td id="darkorange"onclick="clickme(event)"></td>
+        <td id="darkmagenta"onclick="clickme(event)"></td>
+        <td id="darkgreen"onclick="clickme(event)"></td>
+        <td id="deeppink"onclick="clickme(event)"></td>
+        <td id="darkviolet"onclick="clickme(event)"></td>
+        <td id="darksalmon"onclick="clickme(event)"></td>
+        <td id="dodgerblue"onclick="clickme(event)"></td>
+        <td id="firebrick"onclick="clickme(event)"></td>
+        <td id="floralwhite"onclick="clickme(event)"></td>
+        
+    </tr>
+    <tr>
+        <td id="fuchsia" onclick="clickme(event)"></td>
+        <td id="gray"onclick="clickme(event)"></td>
+        <td id="grey"onclick="clickme(event)"></td>
+        <td id="green"onclick="clickme(event)"></td>
+        <td id="yellow"onclick="clickme(event)"></td>
+        <td id="indigo"onclick="clickme(event)"></td>
+        <td id="lightcoral"onclick="clickme(event)"></td>
+        <td id="white"onclick="clickme(event)"></td>
+        <td id="limegreen"onclick="clickme(event)"></td>
+        <td id="maroon"onclick="clickme(event)"></td>
+        </tr>
+
+</table>
+
+
+<div id="div">
+
+</div>
+</body>
+
+
+<script>
+var colorname;
+function clickme(getdata){
+colorname=getdata.target.id;
+document.getElementById("div").style.backgroundColor=colorname;
+localStorage.setItem("color" , JSON.stringify(colorname))
+}
+
+var getcolor = localStorage.getItem("color");
+getcolor = JSON.parse(getcolor);
+document.getElementById("div").style.backgroundColor=getcolor;
+
+function clickhere(mixcolor){
+var b =document.getElementById("head").value;
+document.getElementById("div").style.backgroundColor=b;
+
+}
+</script>
+</html>
